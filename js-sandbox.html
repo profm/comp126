@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<title>Comp 126 - Program Logic and Design</title>
+	<style type="text/css">
+		body
+		{
+			font-family: Verdana;
+			font-size: 14pt;
+		}
+
+		fieldset
+		{
+			border: 2px #7247e0 solid;
+			border-radius: 10px;
+			width: 800px;
+		}
+
+		legend
+		{
+			color: #7247e0;
+			font-weight: 600;
+			font-size: 14pt;
+		}
+
+		.code
+		{
+			font-family: "Courier New";
+			font-size: 14pt;
+			font-weight: bold;
+		}
+	</style>
+
+	<script>
+		function setFocus()
+		{	document.getElementById("scriptArea").focus();	}
+		
+		function runCode()
+		{ new Function(document.getElementById("scriptArea").value)(); }
+	</script>
+</head>
+
+<body onload="setFocus();">
+	<fieldset>
+		<legend>&nbsp;Comp 126 JavaScript Sandbox&nbsp;</legend>
+		<p>
+			Type your code into the text area below.<br />
+			When you are finished, click the Run Code button to run your code.<br />
+			If you want to erase all of your code, click the Clear button.<br />
+		</p>
+
+		<form action="js-sandbox.html" id="sand">			
+			<p><textarea class="code" id="scriptArea" name="scriptArea" cols="70" rows="25" ></textarea></p>
+			<p>
+				<input type="button" value="Run Code" id="runButton" onclick="runCode();" />
+				<input type="reset" value="Clear" id="clearButton" onclick="setFocus();"/>
+			</p>
+		</form>
+	</fieldset>
+</body>
+</html>
